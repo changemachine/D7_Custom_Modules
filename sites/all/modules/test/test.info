@@ -1,5 +1,0 @@
-name = Test
-description = This is a test
-package = test
-core = 7.x
-files[] = test.module

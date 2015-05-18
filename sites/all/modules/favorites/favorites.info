@@ -1,0 +1,5 @@
+name = Favorites
+description = Creates menu items linking to our favorite things.
+package = Epicodus Examples
+core = 7.x
+files[] = favorites.module

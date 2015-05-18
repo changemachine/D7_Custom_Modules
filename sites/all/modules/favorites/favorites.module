@@ -1,0 +1,52 @@
+<?php
+
+function favorites_menu() {
+    $items = array();
+    $items['favorite_movies'] = array(
+        'title' => "The Best Movies",
+        'page callback' => 'movies_display',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['favorite_books'] = array(
+        'title' => "The Best Books",
+        'page callback' => 'books_display',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['favorite_songs'] = array(
+        'title' => "The Best Songs",
+        'page callback' => 'songs_display',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+
+    return $items;
+}
+
+function movies_display(){
+    return
+    '<ul>
+        <li>Apostrophe Now</li>
+        <li>Morning in the Morning</li>
+        <li>Dog on Fire</li>
+    </ul>';
+}
+
+function books_display(){
+    return
+    '<ul>
+        <li>Donkey Wars</li>
+        <li>The Mean Cat</li>
+        <li>Dog on Fire, screenplay</li>
+    </ul>';
+}
+
+function songs_display(){
+    return
+    '<ul>
+        <li>The Donkey Song</li>
+        <li>The Mean Donkey</li>
+        <li>Donkey on Fire, the song</li>
+    </ul>';
+}
