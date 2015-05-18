@@ -1,0 +1,45 @@
+<?php
+
+function groceries_menu(){
+    $items = array();
+    $items['grocery_list'] = array(
+        'title' => 'Grocery List',
+        'page callback' => 'list_grocery',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+
+    return $items;
+}
+
+function list_grocery() {
+    $list = array();
+    $list['Eggs'] = array(
+        'price' => '$3 per dozen',
+        'quantity' => 6,
+        'total' => 1.50,
+    );
+    $list['Bread'] = array(
+        'price' => '$4.30 per loaf',
+        'quantity' => 1,
+        'total' => 4.30,
+    );
+    $list['Milk'] = array(
+        'price' => '$54 per gallon',
+        'quantity' => 1,
+        'total' => 54.00,
+    );
+    $total = 0;
+    $result = '<ul>';
+    foreach($list as $key => $item){
+        $total = $total + $item['total'];
+        $result = $result . '<li>' . $key . '</li>' .
+        '<ul><li>Price: ' . $item['price'] . '</li>' .
+        '<li>Quantity: ' . $item['quantity'] . '</li>' .
+        '<li><strong>Total Price:$ ' . number_format($item['total'], 2) . '</strong></li></ul>';
+
+    };
+
+    $result = 'Total Cost:<strong> $ ' . number_format($total, 2, ".", "") . '</strong>' . $result . '</ul>';
+    return $result;
+}
