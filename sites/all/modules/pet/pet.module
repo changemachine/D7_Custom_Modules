@@ -1,0 +1,15 @@
+<?php
+function pet_menu() {
+    $items = array();
+    $items['binky'] = array(
+        'title' => 'My Pet Hyena!',
+        'page callback' => 'say_hello_to_my_little_friend',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function say_hello_to_my_little_friend() {
+    return '<p>Hello my dear friend!</p><img src="http://online.wsj.com/media/0717pod10.jpg" alt="Man with Puppy">';
+}
