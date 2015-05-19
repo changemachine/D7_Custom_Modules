@@ -1,0 +1,3 @@
+[submodule "sites/all/modules/greetings"]
+	path = sites/all/modules/greetings
+	url = https://github.com/evanb2/greetingModule.git
